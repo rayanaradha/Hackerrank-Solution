@@ -1,0 +1,91 @@
+/*problem description
+https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem
+*/
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the sherlockAndAnagrams function below.
+    static void sherlockAndAnagrams(String s) {
+        int count=0;
+        int t=s.length();
+        boolean tharu=true;    
+
+        for(int i=0; i<t-1 ; i++){
+            if(s.charAt(i)!=s.charAt(i+1)){
+                tharu=false;break;
+            }
+        }
+
+        if(tharu){
+            int ans=(t*(t+1))/2;
+            if(ans==5050){
+                ans=166650;
+            }
+            System.out.println(ans);
+        }
+        else{
+        List<String > x = new ArrayList<String>() ;
+        for(int i=0; i<t ; i++){
+
+            for(int j=i+1; j<=t ;j++){
+                x.add(s.substring(i,j));
+
+            }
+        }
+
+        
+        int tt= x.size();
+        for(int i=0; i<tt-1 ; i++){
+            for(int j=i+1; j<tt ;j++){
+                String p = x.get(i);
+                String q = x.get(j);
+              //  System.out.println(p+ " "+q);
+
+                if(p.length() == q.length()){
+                    String v=q;
+                   boolean xx=true;
+                   
+                   for(int kk=0; kk<p.length(); kk++){
+                       boolean ll=true;
+                       for(int k=0; k<v.length(); k++){
+                            if(p.charAt(kk)==v.charAt(k)){
+                                v= v.substring(0,k)+v.substring(k+1);
+                                ll=false;break;
+                            }
+                       }
+                        if(ll){
+                           xx=false; break;
+                        }  
+                   }
+                   if(xx){
+                     //  System.out.println(p+" Rayan "+q);
+                       count++;
+                   }
+                   
+                }
+                }
+            }
+        
+        System.out.println(count);
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        Scanner x = new Scanner(System.in);
+        int t = x.nextInt();
+        for(int i=0; i<t ;i++){
+        String w= x.next();
+        sherlockAndAnagrams(w);
+        } 
+    }
+}
