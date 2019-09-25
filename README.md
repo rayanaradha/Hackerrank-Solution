@@ -1,4 +1,4 @@
-<h1>  Solution for ProjectEuler question </h1>
+<h1>  Solution for HackerRank question </h1>
 
 <p>HackerRank is a place where programmers from all over the world come together to solve problems in a wide range
 of Computer Science domains such as algorithms, machine learning,
