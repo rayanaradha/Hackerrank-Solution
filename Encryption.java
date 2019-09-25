@@ -1,4 +1,4 @@
-/problem description::https://www.hackerrank.com/challenges/encryption/submissions/code/107644327
+//problem description::https://www.hackerrank.com/challenges/encryption/problem
 
 import java.io.*;
 import java.math.*;
